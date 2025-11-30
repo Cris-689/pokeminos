@@ -13,15 +13,7 @@ interface PokemonData {
   speed: number;
 }
 
-export const Pokemon = ({
-  id,
-  small = false,
-  miniText = false,
-}: {
-  id: number;
-  small?: boolean;
-  miniText?: boolean;
-}) => {
+export const Pokemon = ({id, small = false, miniText = false,}:{id: number;small?: boolean;miniText?: boolean;}) => {
   const [pokemon, setPokemon] = useState<PokemonData | null>(null);
 
   useEffect(() => {
@@ -43,7 +35,17 @@ export const Pokemon = ({
       );
   }, [id]);
 
-  if (!pokemon) return <img src="" alt="" />;
+  if (!pokemon) {
+    return (
+      <div style={{ textAlign: "center" }}>
+        <img
+          src="/images/404.png"
+          alt="Cargando..."
+          style={{ width: "100px", height: "100px", objectFit: "contain" }}
+        />
+      </div>
+    );
+  }
 
   // Imagen pequeña
   if (small) {

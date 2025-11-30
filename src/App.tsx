@@ -1,8 +1,8 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { GenPage } from './assets/paginas/GenPokemon'
-import { Pokemon } from './assets/componentes/Pokemon'
-import { Navbar } from './assets/componentes/Navbar'
+import { GenPage } from './paginas/GenPokemon'
+import { Pokemon } from './componentes/Pokemon'
+import { Navbar } from './componentes/Navbar'
 
 function App() {
   return (
